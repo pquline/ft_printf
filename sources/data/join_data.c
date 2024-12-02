@@ -6,7 +6,7 @@
 /*   By: pfischof <pfischof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 22:08:43 by pfischof          #+#    #+#             */
-/*   Updated: 2024/12/01 22:08:48 by pfischof         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:07:21 by pfischof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,22 @@ static void	join(t_data *data, const char *string, const size_t size)
 	data->output.size += size;
 }
 
+static void	join_padding(t_data *data)
+{
+	data->flags[WIDTH] = false;
+	if (data->flags[ZERO_PADDING] \
+			&& (data->flags[SIGN] || data->conversion.signed_number))
+		join(data, data->sign, sizeof(char));
+	join(data, data->padding.content, ft_strlen(data->padding.content));
+}
+
 void	join_data(t_data *data)
 {
-	if (data->flags[WIDTH] && data->flags[LEFT_ADJUSTING] == false)
-	{
-		if (data->flags[ZERO_PADDING] \
-				&& (data->flags[SIGN] || data->conversion.signed_number))
-			join(data, data->sign, sizeof(char));
-		join(data, data->padding.content, ft_strlen(data->padding.content));
-	}
+	if (data->flags[WIDTH] && data->flags[LEFT_ADJUSTING] == false \
+			&& ((ft_strchr(HEX, data->format) != NULL \
+			|| data->flags[ALTERNATE_FORM] == false) \
+			&& data->flags[ZERO_PADDING] == false))
+		join_padding(data);
 	if (data->flags[ZERO_PADDING] == false)
 		if (data->flags[SIGN] || data->conversion.signed_number)
 			join(data, data->sign, sizeof(char));
@@ -63,6 +70,8 @@ void	join_data(t_data *data)
 		join(data, data->blank, sizeof(char));
 	if (data->flags[ALTERNATE_FORM] || data->format == FORMAT_POINTER)
 		join(data, data->alternate, ft_strlen(data->alternate));
+	if (data->flags[WIDTH] && data->flags[LEFT_ADJUSTING] == false)
+		join_padding(data);
 	if (data->flags[PRECISION] && data->format != FORMAT_STRING \
 			&& data->format != FORMAT_CHARACTER)
 		join(data, data->precision.content, ft_strlen(data->precision.content));
