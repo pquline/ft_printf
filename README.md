@@ -126,13 +126,13 @@ int main(void)
 
 	char	buffer2[100];
 
-	bytes = ft_dprintf(STDOUT_FILENO, "This is sent to the standard output: %d", 42);
+	bytes = dprintf(STDOUT_FILENO, "This is sent to the standard output: %d", 42);
 	ft_dprintf(STDOUT_FILENO, "\t[%d]\n", bytes);
 
-	bytes = ft_sprintf(buffer2, "Hello, %s!", "World");
+	bytes = sprintf(buffer2, "Hello, %s!", "World");
 	ft_dprintf(STDOUT_FILENO, "%s\t\t\t\t[%d]\n", buffer2, bytes);
 
-	bytes = ft_snprintf(buffer2, 10, "Number: %d", 123456);
+	bytes = snprintf(buffer2, 10, "Number: %d", 123456);
 	ft_dprintf(STDOUT_FILENO, "%s\t\t\t\t[%d]\n", buffer2, bytes);
 
 	return (0);
