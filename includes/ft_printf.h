@@ -6,7 +6,7 @@
 /*   By: pfischof <pfischof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:51:43 by pfischof          #+#    #+#             */
-/*   Updated: 2024/12/01 22:10:24 by pfischof         ###   ########.fr       */
+/*   Updated: 2024/12/04 04:46:46 by pfischof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,15 @@
 /*                                   MACROS                                   */
 /* -------------------------------------------------------------------------- */
 
-# define SUCCESS		0
-
 # define ERROR				-1
-# define CONVERSION_LEN		2
-# define ALT_LEN			2
 # define NUMBER_OF_FLAGS	7
 # define BASE_10			10
 # define BASE_16			16
 
 # define FORMAT			"%cspdiuxX"
-# define NUMERICALS		"diuxX"
+# define NUMERICS		"diuxX"
 # define HEX			"xX"
 # define OPT			"# +-0"
-# define NULL_FORMAT	"NULL"
 # define DECIMAL		"0123456789"
 # define HEX_LOWER		"0123456789abcdef"
 # define HEX_UPPER		"0123456789ABCDEF"
@@ -148,7 +143,6 @@ typedef struct s_data
 	t_padding		padding;
 	t_precision		precision;
 	t_output		output;
-	int				size;
 }	t_data;
 
 /* -------------------------------------------------------------------------- */

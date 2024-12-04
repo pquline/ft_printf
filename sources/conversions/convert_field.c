@@ -6,7 +6,7 @@
 /*   By: pfischof <pfischof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 20:51:24 by pfischof          #+#    #+#             */
-/*   Updated: 2024/12/01 20:17:57 by pfischof         ###   ########.fr       */
+/*   Updated: 2024/12/04 04:42:51 by pfischof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	revise_string(t_data *data)
 
 static void	revise_numeric(t_data *data)
 {
-	if (ft_strchr(NUMERICALS, data->format) == NULL \
+	if (ft_strchr(NUMERICS, data->format) == NULL \
 			|| data->flags[PRECISION] == false)
 		return ;
 	if (data->conversion.content && data->conversion.content[0] == ZERO_CHAR \
