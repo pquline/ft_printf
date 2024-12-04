@@ -206,8 +206,6 @@ char	*ft_strncpy(char *destination, char *source, size_t size);
 
 int		ft_strlen(const char *string);
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-
 void	ft_free(void **pointer);
 
 void	*ft_memset(void *pointer, int character, size_t length);

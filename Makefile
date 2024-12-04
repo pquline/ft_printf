@@ -49,7 +49,6 @@ SRC				+=	$(SRC_UTILS)ft_memset.c
 SRC				+=	$(SRC_UTILS)ft_strchr.c
 SRC				+=	$(SRC_UTILS)ft_strcpy.c
 SRC				+=	$(SRC_UTILS)ft_strdup.c
-SRC				+=	$(SRC_UTILS)ft_strlcat.c
 SRC				+=	$(SRC_UTILS)ft_strlen.c
 SRC				+=	$(SRC_UTILS)ft_strncpy.c
 SRC				+=	$(SRC_UTILS)ft_valloc.c
