@@ -6,7 +6,7 @@
 /*   By: pfischof <pfischof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:51:43 by pfischof          #+#    #+#             */
-/*   Updated: 2024/12/04 04:46:46 by pfischof         ###   ########.fr       */
+/*   Updated: 2024/12/04 06:01:39 by pfischof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,7 +192,7 @@ int		ft_sprintf(char *output, const char *format, ...);
 
 /* ---------------------------------- UTILS --------------------------------- */
 
-char	*ft_itoa_base(unsigned long long number, int base_length);
+char	*ft_utoa_base(unsigned long long number, int base_length);
 char	*ft_strchr(const char *string, int character);
 char	*ft_strcpy(char *destination, char *source);
 char	*ft_strdup(const char *original);

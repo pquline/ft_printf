@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_utoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfischof <pfischof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 00:47:22 by pfischof          #+#    #+#             */
-/*   Updated: 2024/12/01 15:52:25 by pfischof         ###   ########.fr       */
+/*   Updated: 2024/12/04 06:02:38 by pfischof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ static long	ft_get_len_base(unsigned long long number, int base)
 static char	*ft_get_base(int *base_length)
 {
 	if (*base_length == -BASE_16)
-		return (*base_length = -(*base_length), HEX_LOWER);
+		return (*base_length = BASE_16, HEX_LOWER);
 	if (*base_length == BASE_16)
 		return (HEX_UPPER);
 	return (DECIMAL);
 }
 
-char	*ft_itoa_base(unsigned long long number, int base_length)
+char	*ft_utoa_base(unsigned long long number, int base_length)
 {
 	int			length;
 	char		*str_number;

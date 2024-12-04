@@ -6,7 +6,7 @@
 /*   By: pfischof <pfischof@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 13:32:02 by pfischof          #+#    #+#             */
-/*   Updated: 2024/12/01 21:49:42 by pfischof         ###   ########.fr       */
+/*   Updated: 2024/12/04 06:01:39 by pfischof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ void	convert_decint(t_data *data, int number)
 	if (n < 0)
 	{
 		data->conversion.signed_number = true;
-		data->conversion.content = ft_itoa_base(-n, BASE_10);
+		data->conversion.content = ft_utoa_base(-n, BASE_10);
 	}
 	else
-		data->conversion.content = ft_itoa_base(n, BASE_10);
+		data->conversion.content = ft_utoa_base(n, BASE_10);
 }
 
 void	convert_hexadecimal(t_data *data, unsigned int number)
 {
 	if (data->format == FORMAT_HEXA_LOWER)
-		data->conversion.content = ft_itoa_base(number, -BASE_16);
+		data->conversion.content = ft_utoa_base(number, -BASE_16);
 	else if (data->format == FORMAT_HEXA_UPPER)
-		data->conversion.content = ft_itoa_base(number, BASE_16);
+		data->conversion.content = ft_utoa_base(number, BASE_16);
 }
 
 void	convert_pointer(t_data *data, void *pointer)
@@ -58,10 +58,10 @@ void	convert_pointer(t_data *data, void *pointer)
 	}
 	if (data->alternate == NULL)
 		data->alternate = ft_strdup(ALT_LOWER);
-	data->conversion.content = ft_itoa_base((uintptr_t)pointer, -BASE_16);
+	data->conversion.content = ft_utoa_base((uintptr_t)pointer, -BASE_16);
 }
 
 void	convert_uinteger(t_data *data, unsigned int number)
 {
-	data->conversion.content = ft_itoa_base(number, BASE_10);
+	data->conversion.content = ft_utoa_base(number, BASE_10);
 }

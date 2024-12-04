@@ -44,7 +44,7 @@ SRC				+=	$(SRC_PRINTF)ft_sprintf.c
 # ----------------------------------- UTILS ---------------------------------- #
 
 SRC				+=	$(SRC_UTILS)ft_free.c
-SRC				+=	$(SRC_UTILS)ft_itoa_base.c
+SRC				+=	$(SRC_UTILS)ft_utoa_base.c
 SRC				+=	$(SRC_UTILS)ft_memset.c
 SRC				+=	$(SRC_UTILS)ft_strchr.c
 SRC				+=	$(SRC_UTILS)ft_strcpy.c
