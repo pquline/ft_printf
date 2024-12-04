@@ -112,15 +112,28 @@ In addition to the standard `ft_printf`, the library also provides:
 
 int main(void)
 {
-	char buffer[100];
+	int	bytes;
+	char	buffer[100];
 
-	ft_dprintf(STDOUT_FILENO, "This is sent to the standard output: %d\n", 42);
+	bytes = ft_dprintf(STDOUT_FILENO, "This is sent to the standard output: %d", 42);
+	ft_dprintf(STDOUT_FILENO, "\t[%d]\n", bytes);
 
-	ft_sprintf(buffer, "Hello, %s!", "World");
-	ft_printf("%s\n", buffer);
+	bytes = ft_sprintf(buffer, "Hello, %s!", "World");
+	ft_dprintf(STDOUT_FILENO, "%s\t\t\t\t[%d]\n", buffer, bytes);
 
-	ft_snprintf(buffer, 10, "Number: %d", 123456);
-	ft_printf("%s\n", buffer);
+	bytes = ft_snprintf(buffer, 10, "Number: %d", 123456);
+	ft_dprintf(STDOUT_FILENO, "%s\t\t\t\t[%d]\n", buffer, bytes);
+
+	char	buffer2[100];
+
+	bytes = ft_dprintf(STDOUT_FILENO, "This is sent to the standard output: %d", 42);
+	ft_dprintf(STDOUT_FILENO, "\t[%d]\n", bytes);
+
+	bytes = ft_sprintf(buffer2, "Hello, %s!", "World");
+	ft_dprintf(STDOUT_FILENO, "%s\t\t\t\t[%d]\n", buffer2, bytes);
+
+	bytes = ft_snprintf(buffer2, 10, "Number: %d", 123456);
+	ft_dprintf(STDOUT_FILENO, "%s\t\t\t\t[%d]\n", buffer2, bytes);
 
 	return (0);
 }
